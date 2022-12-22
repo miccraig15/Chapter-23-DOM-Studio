@@ -6,10 +6,10 @@ window.addEventListener("load", function() {
         if (response) {
             let newTakeOffStatus = document.querySelector("#flightStatus");
             let newTakeOffBackground = document.querySelector("#shuttleBackground");
-            let shuttleHeight1 = document.querySelector("#spaceShuttleHeight");
+            let newTakeOffShuttleHeight = document.querySelector("#spaceShuttleHeight");
             newTakeOffStatus.innerHTML = "Shuttle in flight.";
             newTakeOffBackground.style.backgroundColor = "blue";
-            shuttleHeight1.innerHTML = 10000;
+            newTakeOffShuttleHeight.innerHTML = 10000;
         }
     });
     landing.addEventListener('click', event => {
@@ -20,5 +20,16 @@ window.addEventListener("load", function() {
             newLandingStatus.innerHTML = "The shuttle has landed.";
             newLandingShuttleBackground.style.backgroundColor = "green";
             newLandingShuttleHeight.innerHTML = 0;
+    })
+    missionAbort.addEventListener('click', event => {
+    let response = window.confirm("Confirm that you want to abort the mission.");
+        if (response) {
+            let newAbortStatus = document.querySelector("#flightStatus");
+            let newAbortBackground = document.querySelector("#shuttleBackground");
+            let newAbortShuttleHeight = document.querySelector("#spaceShuttleHeight");
+            newAbortStatus.innerHTML = "Mission aborted";
+            newAbortBackground.style.backgroundColor = "green";
+            newAbortShuttleHeight.innerHTML = 0;
+        }
     })
 });
